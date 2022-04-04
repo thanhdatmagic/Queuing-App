@@ -1,0 +1,38 @@
+.menubar{
+    position: absolute;
+    width: 200px;
+    height: 810px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
+    border-radius: 16px 0px 0px 16px;
+    }
+    .logo{
+        position: relative;
+        top: 30px;
+        height:90px;
+        width: 120px;
+    }
+    .option{
+        margin-top: 90px;
+    }
+    
+    .op{
+        list-style: none;
+        text-decoration: none;
+    }
+    .opitem{ 
+        padding : 10px;
+        color: #7E7D88;
+        margin: 20px;
+    }
+    .btnlogout{
+        margin-top:90px;
+        background: #FFF2E7;
+        border-radius: 8px;
+        padding:10px 30px 10px 30px;
+        border-color: #FFF2E7;
+        color:#FF7506;
+        border:none
+    }
