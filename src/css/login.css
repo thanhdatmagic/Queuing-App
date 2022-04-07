@@ -1,12 +1,12 @@
 
-.loginpage{
+#loginpage{
     position: relative;
     width: 1440px;
     height: 810px;
     background: #F7F7F7;
     border-radius: 16px;
 }
-.username{
+#username{
         position: absolute;
         width: 133px;
         height: 27px;
@@ -23,7 +23,7 @@
         flex-grow: 0;
         margin: 4px 0px;
     }
-.userinput{
+#userinput{
     position: absolute;
     padding: 10px 270px 10px 12px;
     width: 200px;
@@ -36,8 +36,8 @@
     border-radius: 8px;
    
 }
-.password{
-    position: absolute;
+#password{
+    position: relative;
     width: 88px;
     height: 27px;
     left: 96px;
@@ -53,7 +53,7 @@
     flex-grow: 0;
     margin: 4px 0px;
 }
-.ipassword{
+#ipassword{
     position: absolute;
     padding: 10px 270px 10px 12px;
     width: 200px;
@@ -65,7 +65,7 @@
     box-sizing: border-box;
     border-radius: 8px;
 }
-.fpass{
+#fpass{
 position: absolute;
 width: 102px;
 height: 21px;
@@ -78,7 +78,7 @@ font-size: 14px;
 line-height: 21px;
 color: #E73F3F;
 }
-.btnlogin{
+#btnlogin{
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -99,7 +99,7 @@ box-shadow: 0px 0px 6px #E7E9F2;
 border-radius: 8px;
 border-color: #FF9138;
 }
-.infopage{
+#infopage{
     position: absolute;
 width: 848px;
 height: 810px;
@@ -110,14 +110,27 @@ top: 0px;
 
 background: #FFFFFF;
 }
-.logo{
+#logo{
     position: absolute;
     width: 170px;
     height: 136px;
     left: 180px;
     top: 100px;
 }
-.titlepage{
+#titlepage{
     height: 700px;
     width: 800px
+}
+#tlogin{
+position: relative;
+top:8px;
+right: 2px;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+
+
+color: #FFFFFF;
 }

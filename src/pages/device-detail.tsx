@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/device.css'
 import MenuBar from '../components/menubar'
+import {Link} from 'react-router-dom'
 
 export default function DetailDevice() {
   return (
@@ -23,10 +24,10 @@ export default function DetailDevice() {
            <p id='service-label-detail'>Dịch vụ sử dụng </p>
            <p id='id-label-detail'>Mã thiết bị</p>
        </div>
-       <div className="updatebtn">
+       <Link to='/device/update' className="updatebtn">
            <a href="" id='btnupdate'>I</a>
            <p id='update-label'>Cập nhật thiết bị</p>
-       </div>
+       </Link>
       
 
     </div>

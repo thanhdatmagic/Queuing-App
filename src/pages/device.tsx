@@ -1,6 +1,7 @@
 import React from 'react'
 import MenuBar from '../components/menubar'
 import '../css/device.css'
+import {Link} from 'react-router-dom'
 
 export default function device() {
   return (
@@ -53,15 +54,20 @@ export default function device() {
                 <td>Ngưng hoạt động</td>
                 <td>Mất kết nối</td>
                 <td>Kham tim mạch khám mắt <br/><a href="#">Xem thêm</a></td>
-                <td><a href="#">Chi tiết</a></td>
-                <td><a href="#">Chi tiết</a></td>
+                <td>
+                  <Link to='/device/detail'>Chi tiết</Link>
+                
+                </td>
+                <td>
+                  <Link to='/device/detail'>Chi tiết</Link>               
+                </td>
               </tr>
             </table>
         </div>
-        <div className="add-device">
+        <Link to='/device/add' className="add-device">
           <p id='addbtn'>+</p>
           <p id='labeladd'>Thêm thiết bị</p>
-        </div>
+        </Link>
 
 
     </div>

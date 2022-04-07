@@ -1,11 +1,14 @@
 .forgotpass{
+
+
+
     position: relative;
     width: 1440px;
     height: 810px;
     background: #F7F7F7;
     border-radius: 16px;
 }
-.infopage{
+#infopage{
      position: absolute;
 width: 848px;
 height: 810px;
@@ -13,14 +16,14 @@ left: 592px;
 top: 0px;
 background: #FFFFFF;
 }
-.logo{ 
+#logo{ 
     position: absolute;
     width: 170px;
     height: 136px;
     left: 180px;
     top: 100px;
 }
-.repasss{
+#repasss{
 position: absolute;
 left: 150px;
 right: 73.68%;
@@ -31,9 +34,10 @@ font-weight: bold;
 font-size: 20px;
 line-height: 33px;
 color: #282739;
+
 }
-.need{
-     position: absolute;
+#need{
+position: absolute;
 width: 396px;
 height: 27px;
 left: 80px;
@@ -49,7 +53,7 @@ line-height: 27px;
 color: #37474F;
 }
 
-.entermail{
+#entermail{
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -64,7 +68,7 @@ border: 1.5px solid #D4D4D7;
 box-sizing: border-box;
 border-radius: 8px;
 }
-.nextbtn{
+#nextbtn{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -80,9 +84,7 @@ border-radius: 8px;
     border-color:white;
     color:white
 }
-.cancelbtn{
-    display: flex;
-    flex-direction: row;
+#cancelbtn{
     justify-content: center;
     align-items: center;
     padding: 10px 24px;
@@ -96,7 +98,7 @@ border-radius: 8px;
     border-color:#FF9138;
     color: #FF9138;
 }
-.titlepage{
+#titlepage{
     height: 700px;
     width: 800px
 }

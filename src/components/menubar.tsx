@@ -5,7 +5,7 @@ import '../css/menubar.css'
 export default function menubar() {
   return (
     <div className="menubar">
-            <img src={logo} alt="" className="logo"/>
+            <img src={logo} alt="" id="logosmall"/>
             <div className="option">
                 <u className='op'>
                     <li className='opitem'>Dashboard</li>

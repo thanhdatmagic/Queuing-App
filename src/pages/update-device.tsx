@@ -1,6 +1,7 @@
 import React from 'react'
 import MenuBar from '../components/menubar'
 import '../css/device.css'
+import {Link} from 'react-router-dom'
 
 export default function UpdateDevice() {
   return (
@@ -30,8 +31,10 @@ export default function UpdateDevice() {
            <p id='id-label'>Mã thiết bị</p>
            <input id='id-input'placeholder='Nhập mã thiết bị'/>
        </div>
-       <button id='btncancle'>Hủy bỏ</button>
-       <button id ='btnaddnew'> Cập nhật</button>
+
+      
+      <Link to='/device' id ='btncancle'>Huy bỏ</Link>
+      <Link to='/device' id ='btnaddnew'>Cập nhật</Link>
        </div>
     </>
   )
