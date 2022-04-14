@@ -2,8 +2,24 @@ import React from 'react'
 import MenuBar from '../components/menubar'
 import '../css/device.css'
 import {Link} from 'react-router-dom'
+import { useState,useEffect } from 'react'
+import {db} from '../firebase'
+import {collection,getDocs} from "firebase/firestore"
+import DetailDevice from './device-detail'
+
 
 export default function device() {
+  const [devices,setDevices] = useState([] as any)
+  const devicesCollection =collection(db,"device")
+  useEffect(() =>{
+    const getDevices=async()=>{
+      const data= await getDocs(devicesCollection)
+      console.log(data)
+      setDevices(data.docs.map(doc =>({...doc.data(),id:doc.id})))
+    }
+    getDevices()
+  },[])
+  console.log(devices)
   return (
     <>
     <div className="device">
@@ -36,6 +52,7 @@ export default function device() {
           <input placeholder="Nhập từ khóa" id='inputkeyword'/>
         </div>
         <div className="device-data">
+
             <table>
               <tr>
                 <th>Mã Thiết Bị</th>
@@ -47,21 +64,30 @@ export default function device() {
                 <th></th>
                 <th></th>
               </tr>
-              <tr>
-                <td>KIO_01</td>
-                <td>Kiosk</td>
-                <td>192.168.1.10</td>
-                <td>Ngưng hoạt động</td>
-                <td>Mất kết nối</td>
-                <td>Kham tim mạch khám mắt <br/><a href="#">Xem thêm</a></td>
-                <td>
-                  <Link to='/device/detail'>Chi tiết</Link>
+              {devices.map((device)=>{
+                return(
+                  <div>
+                  <tr>
+                  <td>KIO_0{device.id}</td>
+                  <td>{device.name}</td>
+                  <td>{device.ip}</td>
+                  <td>{device.status}</td>
+                  <td>{device.sttconnection}</td>
+                  <td>Kham tim mạch khám mắt <br/><a href="#">Xem thêm</a></td>
+                  <td>
+                    <Link to={`/device/${device.id}`} key={device.id}>Chi tiết</Link>
+                  
+                  </td>
+                  <td>
+                    <Link to={`/device/${device.id}`} key={device.id}>Chi tiết</Link>               
+                  </td>
+                </tr>
+
+                  </div>
+                )
                 
-                </td>
-                <td>
-                  <Link to='/device/detail'>Chi tiết</Link>               
-                </td>
-              </tr>
+              })}
+              
             </table>
         </div>
         <Link to='/device/add' className="add-device">

@@ -2,6 +2,9 @@ import React from 'react'
 import MenuBar from '../components/menubar'
 import '../css/device.css'
 import {Link} from 'react-router-dom'
+import { useState,useEffect } from 'react'
+import {db} from '../firebase'
+import {collection,getDoc} from "firebase/firestore"
 
 export default function UpdateDevice() {
   return (

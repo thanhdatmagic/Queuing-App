@@ -8,9 +8,10 @@ import Device from './pages/device'
 import AddDevice from './pages/add-device'
 import DetailDevice from './pages/device-detail'
 import UpdateDevice from './pages/update-device'
-
+import Service from './pages/service/service'
 
 function App() {
+ 
   return (
     <div className="App">
       <BrowserRouter>
@@ -21,8 +22,9 @@ function App() {
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/device' element={<Device/>}/>
         <Route path='/device/update' element={<UpdateDevice/>}/>
-        <Route path='/device/detail' element={<DetailDevice/>}/>
+        <Route path='/device/:id' element={<DetailDevice/>}/>
         <Route path='/device/add' element={<AddDevice/>}/>
+        <Route path='/service/' element={<Service/>}/>
 
       </Routes>
       </BrowserRouter>
