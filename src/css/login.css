@@ -30,10 +30,10 @@
     height: 38px;
     left: 100px;
     top: 320px;
-    background: #FFFFFF;
     border: 1.5px solid #D4D4D7;
     box-sizing: border-box;
     border-radius: 8px;
+    z-index: 1;
    
 }
 #password{
@@ -64,6 +64,7 @@
     border: 1.5px solid #D4D4D7;
     box-sizing: border-box;
     border-radius: 8px;
+    z-index: 1;
 }
 #fpass{
 position: absolute;
