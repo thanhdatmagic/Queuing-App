@@ -3,17 +3,33 @@ import MenuBar from '../components/menubar'
 import '../css/device.css'
 import { useState,useEffect } from 'react'
 import {db} from '../firebase'
-import {collection,addDoc} from "firebase/firestore"
+import {collection,addDoc,getDocs} from "firebase/firestore"
+import {useNavigate} from 'react-router-dom'
 
 export default function NewDevice() {
+  const navitage=useNavigate()
+  const [services,setServices] = useState([] as any)
+  const ServicesCollection =collection(db,"service")
+  useEffect(() =>{
+    const getServices=async()=>{
+      const data= await getDocs(ServicesCollection)
+      console.log(data)
+      setServices(data.docs.map(doc =>({...doc.data(),id:doc.id})))
+    }
+    getServices()
+  },[])
+  console.log(services)
+
   const [name,setName]=useState('')
   const [id,setID]=useState('')
   const [ip,setIP]=useState('')
   const [type,setType]=useState('')
+  const [service,setService]=useState('')
   const devicesCollection =collection(db,"device")
  const createNew= async ()=>{
-  await addDoc(devicesCollection,{ip:ip,name:name,type:type,status:true,sttconnection:true})
+  await addDoc(devicesCollection,{_id:id,ip:ip,name:name,type:type,status:true,sttconnection:true,service:service})
   alert("Added")
+  navitage('/device')
  }
   return (
     <>
@@ -37,8 +53,16 @@ export default function NewDevice() {
                     <option value="Kiosk">Kiosk</option>
                     <option value="Display Counter">Display Counter</option>
             </select>
+
+
+            
            <p id='service-label'>Dịch vụ sử dụng </p>
-           <input id='service-input'placeholder='Nhập dịch vụ sử dụng'/>
+           <select id='service-input'  onChange={(e)=>{setService(e.target.value)}}>
+                    <option disabled selected>Loại dich vu</option>
+                    {services.map(s=>(
+                      <option value={s.name}>{s.name}</option>
+                    ))}
+            </select>
            <p id='id-label'>Mã thiết bị</p>
            <input id='id-input'placeholder='Nhập mã thiết bị' onChange={(e)=>{setID(e.target.value)}}/>
        </div>

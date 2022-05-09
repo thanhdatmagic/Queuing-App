@@ -26,6 +26,9 @@
         padding : 10px;
         color: #7E7D88;
         margin: 20px;
+        position: relative;
+        left: -100px;
+        top:60px;
     }
     .btnlogout{
         margin-top:90px;
@@ -35,4 +38,7 @@
         border-color: #FFF2E7;
         color:#FF7506;
         border:none
+    }
+    .colordropdown{
+        background-color: none 
     }

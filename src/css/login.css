@@ -25,8 +25,8 @@
     }
 #userinput{
     position: absolute;
-    padding: 10px 270px 10px 12px;
-    width: 200px;
+  
+    width: 280px;
     height: 38px;
     left: 100px;
     top: 320px;
@@ -55,8 +55,8 @@
 }
 #ipassword{
     position: absolute;
-    padding: 10px 270px 10px 12px;
-    width: 200px;
+  
+    width: 280px;
     height: 38px;
     left: 100px;
     top: 410px;
@@ -122,16 +122,16 @@ background: #FFFFFF;
     height: 700px;
     width: 800px
 }
-#tlogin{
-position: relative;
-top:8px;
-right: 2px;
+.tlogin{
+position: absolute;
+top:540px;
+left: 150px;
 font-family: 'Nunito';
 font-style: normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 24px;
-
-
 color: #FFFFFF;
+background-color: #FF9138;
+width:150px
 }

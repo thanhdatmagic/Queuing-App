@@ -1,0 +1,83 @@
+.positiontablerole{
+    top:220px;
+    left:-200px; 
+    position: relative;
+}
+.tablenumberintable{
+    width: 1000px;
+}
+.positionlinktiupdate{
+    position: relative;
+    top: 0;
+    left: 0;
+    text-decoration-line: underline;
+    color: #4277FF;
+}
+.inputsearchlabel{
+position: relative;
+left: 550px;
+margin-bottom   : 10px;
+}
+.labellistrole{
+    font-size:22px;
+    color:#FF7506;
+    position: relative;
+    top: 150px;
+    left:-260px
+}
+
+.labelinforole{
+
+    font-size:20px;
+    color:#FF7506;
+    position: relative;
+    top: 180px;
+    left:-260px
+}
+.labelnamerole{
+    position: relative;
+    font-weight: bold;
+    top: 190px;
+    left:-260px
+}
+.inputlabelname{
+    font-size:20px;
+    position: relative;
+    top: 190px;
+    left:-150px;
+    background: #FFFFFF;
+    width: 560px;
+
+border: 1.5px solid #D4D4D7;
+border-radius: 8px;
+}
+.descrole{
+    height: 160px;
+}
+.rolefeatureoption{
+    position: relative;
+    right: -500px;
+    top: -80px;
+    background-color: #FFF2E7;
+    border-radius: 8px;
+}
+.addroleright{
+    font-weight: bold;
+    color:#FF7506;
+}
+#labeldivefeature{
+position: relative;
+top: -90px;
+right:-200px
+}
+.postioninuprole{
+    position: relative;
+    right: 0px;
+    margin-right: 20px;
+}
+.mainlabellistroleindex{
+    position: relative;
+    left: -180px;
+    color: #FF7506;
+    font-size:22px;
+}

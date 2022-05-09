@@ -50,6 +50,7 @@ h3{
     width:200px
 }
 .stacticitem{
+    position: relative;
     width: 186px;
     height: 120px;
     background: #FFFFFF;
@@ -58,7 +59,7 @@ h3{
 .chart{
     position: absolute;
     left:270px;
-    top:390px;
+    top:420px;
     width: 791px;
     height:484px
 }
@@ -74,17 +75,78 @@ h2{
     height: 36px;
 }
 .staticnumber{
-
+position: relative;
 width: 108px;
 height: 45px;
-left: 12px;
-top: 68px;
+left: 5px;
+top: 20px;
 font-family: 'Nunito';
 font-style: normal;
 font-weight: 700;
 font-size: 30px;
 line-height: 45px;
 color: #535261;
-
 }
+.labelreport{
+    position: relative;
+    right:300px;
+    top:10px;  
+    font-size:20px;
+    color:#282739;
+}
+#labelgeneral{
+    position: relative;
+color:black
+}
+.dashboardchooseoption{
+    position: absolute;
+    left:550px
+}
+.iconposition{
+    position: absolute;
+    left:10px;
+    top:20px;
+}
+.lconposition{
+    position: relative;
+    left: 30px;
+    top:20px;
+}
+.dashboardlabelmain{
+    position: relative;
+    top: 100px;
+}
+.dashboardlabelgeneral{
+    position: absolute;
+    top: 90px;
+    font-size: 25px;
+    left: 200px
+}
+.piechartposition{
+    margin-top:10px;
+    position: absolute;
+    top:150px;
+    left: 30px;
+    width:400px
+}
+.numberstatic{
+    position: relative;
+    top: 25px;
+    font-size:35px
+}
+.labelstatic{
+    position: relative;
+    left: 08px;
+    top: 10px;
+    font-size:18px
+    
+}
+
+.site-calendar-demo-card {
+    width: 50px;
+    border: 1px solid #f0f0f0;
+    border-radius: 2px;
+  }
+
+
     

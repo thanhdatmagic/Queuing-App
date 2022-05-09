@@ -7,18 +7,18 @@ import {Link} from 'react-router-dom'
 export default function forgotpass2() {
     return (
         <>
-        <div id='forgotpass'>
+        <div id="forgotpass2forgotpass">
           <img src={login} id='logo'/>
-          <p id='passlabel'>Mật khẩu *</p>
-          <input id="newpass"type="password"/>
+          <p id="forgotpass2passlabel">Mật khẩu *</p>
+          <input id="forgotpass2newpass"type="password"/>
           <p id='repass'>Nhập lại mật khẩu *</p>
-          <input id="newpassconfirm"type="password"/>
+          <input id="forgotpass2newpassconfirm"type="password"/>
 
       </div>
-      <div id="infopage">
-          <Link to='/'id='btncomfirm'>Xác nhận</Link>
+      <div id="forgotpass2infopage">
+          <Link to='/'id="forgotpass2btncomfirm">Xác nhận</Link>
         
-      <img src={titlepage} id='titlepage'/>
+      <img src={titlepage} id="forgotpass2titlepage"/>
       </div>
         </>
     )

@@ -1,0 +1,46 @@
+.tablereportposition{
+    position: relative;
+    top: 250px;
+    left: -200px;
+}
+.picktimeinreport{
+    position: relative;
+    top:220px;
+    left:-480px
+}
+#labelpicktimeinreport{
+    position: relative;
+    left:-85px;
+}
+#inputpicktimeinreport{
+    margin-right: 10px;
+    background: #FFFFFF;
+/* gray blue/gray 2 - stroke */
+
+border: 1.5px solid #D4D4D7;
+border-radius: 8px;
+}
+#labelpicktimeinreport0{
+    color: #FF7506;
+    font-size:20px;
+    position: relative;
+    top:-80px;
+    font-weight:bold;
+}
+.searchinhistory{
+    position: relative;
+    top:170px;
+    left:110px;
+}
+.inputsearchhistory{
+    background: #FFFFFF;
+    width: 240px;
+    height: 44px;
+border: 1.5px solid #D4D4D7;
+border-radius: 8px;
+
+}
+.searchhistorylabel{
+    position: relative;
+    left:-80px
+}

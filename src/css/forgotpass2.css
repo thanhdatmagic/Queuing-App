@@ -1,11 +1,11 @@
-#forgotpass{
+#forgotpass2forgotpass{
     position: relative;
     width: 1440px;
     height: 810px;
     background: #F7F7F7;
     border-radius: 16px;
 }
-#infopage{
+#forgotpass2infopage{
     position: absolute;
 width: 848px;
 height: 810px;
@@ -13,14 +13,14 @@ left: 592px;
 top: 0px;
 background: #FFFFFF;
 }
-#logo{ 
+#forgotpass2logo{ 
     position: absolute;
     width: 170px;
     height: 136px;
     left: 180px;
     top: 100px;
 }
-#passlabel{
+#forgotpass2passlabel{
 position: absolute;
 left: -150px;
 right: 73.68%;
@@ -31,7 +31,7 @@ font-size: 18px;
 line-height: 33px;
 color:#282739;
 }
-#repass{
+#forgotpass2repass{
     position: absolute;
     left: -88px;
     right: 73.68%;
@@ -42,7 +42,7 @@ color:#282739;
     line-height: 33px;
     color: #282739;
 }
-#newpass{
+#forgotpass2newpass{
 display: flex;
 flex-direction: row;
 justify-content: space-between;
@@ -58,7 +58,7 @@ border: 1.5px solid #D4D4D7;
 box-sizing: border-box;
 border-radius: 8px;
 }
-#newpassconfirm{
+#forgotpass2newpassconfirm{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -76,7 +76,7 @@ border-radius: 8px;
 
 
 }
-#btncomfirm{
+#forgotpass2btncomfirm{
     display: flex;
 flex-direction: row;
 justify-content: center;
@@ -92,7 +92,7 @@ border-color: #FF9138;
 border-radius: 8px;
 color:white
 }
-#titlepage{
+#forgotpass2titlepage{
     height: 700px;
     width: 800px
 }

@@ -1,0 +1,108 @@
+.numberlist{
+    position:relative;
+    top:190px;
+    right:200px
+}
+.tablenumber{
+
+}
+#btncreatenew{
+    position: relative;
+    top:210px;
+    padding: -50px;
+    background-color:#FF9138;
+    border-radius:3px solid ;
+    color:white 
+}
+.newnumberarea{
+    padding: 50px;
+    background-color:white;
+    position:relative;
+    top:300px;
+    right:-140px;
+}
+.addnumberpage{
+    background-color:FFF2E7;
+}
+#labelnewnumber{
+    font-size:40px;
+    color:#FF9138;
+    position: relative;
+    top:-150px
+}
+#descnewnumber{
+    font-size:20px;
+    color:black;
+    position: relative;
+    top:-120px
+
+}
+#serviceseletnumber{
+    position: relative;
+    top:-100px;
+    padding:8px 180px 8px 180px;
+    left:200px
+}
+.addNumber{
+    color:white !important;
+    position: relative;
+    right: 200px;
+    padding:8px 50px 8px 50px;
+    background-color:#FF9138
+}
+.cancelNumber{
+    color:#FF9138 !important;
+    position: relative;
+    right: 150px;
+    padding:8px 50px 8px 50px;
+    background-color: #FFF2E7;
+}
+.detalinumber{
+    background-color:red;
+}
+#linkdetailnumber{
+    position: relative;
+    top:5px;
+    left:0px;
+}
+.inputsearchnumbertype{
+    position: relative;
+    left: 320px;
+    margin-bottom: 20px;
+}
+.mainlabelprovidenumber{
+    position: relative;
+    left: -300px;
+    font-size: 22px;
+    color: #FF7506;
+}
+.infodetailnumber{
+    position: relative;
+    top: 260px;
+    left:-250px;
+    font-weight: bold;
+    margin-top:10px
+}
+.infodetailnumberr{
+    position: relative;
+    top: 250px;
+    left:-50px;
+    font-weight: bold;
+    margin-top:20px
+}
+#labelnameinfonumber{
+    position: relative;
+    top: 230px;
+    left:-400px;
+    font-size: 20px;
+    color: #FF7506;
+    font-weight:bold;
+}
+.mainlabelprovidenumberindetail{
+    position: relative;
+    top: 0px;
+    left:-400px;
+    font-size: 22px;
+    color: #FF7506;
+    font-weight:bold;
+}

@@ -3,11 +3,13 @@ import MenuBar from '../../components/menubar'
 import './service.css'
 import { useState,useEffect } from 'react'
 import {db} from '../../firebase'
+import {Link} from 'react-router-dom'
 import {collection,getDocs} from "firebase/firestore"
 
 
-export default function service() {
+export default function Service() {
   const [services,setServices] = useState([] as any)
+  const [search,setSearch]=useState('')
   const devicesCollection =collection(db,"service")
   useEffect(() =>{
     const getServices=async()=>{
@@ -21,13 +23,17 @@ export default function service() {
   
   return (
     <>
-    <div className="device">
+    <div className="container">
+      <div className="row">
+        <div className="col-3">
         <MenuBar/>
+        </div>
+        <div className="col-8">
         <div className="link">
-        <h4 id='link1'>Dịch vụ</h4> <h4 id='link2'>Quản lý dịch vụ</h4>
+       <label className='mainlabelservicemange'>Quản lý dịch vụ</label>
         </div>
       
-        <h3 >Quản lý dịch vụ</h3>
+    
         <div className="status-activity">
           <p id='statusactivity'>Trạng thái hoạt động</p>
           <select id='activityoption' >
@@ -47,38 +53,48 @@ export default function service() {
           <input placeholder="Nhập từ khóa" id='inputkeyword'/>
         </div>
         <div id="service-data">
-            <table>
-              <tr>
-                <th>Mã Dịch Vụ</th>
-                <th>Tên Dịch vụ</th>
-                <th>Mô tả</th>
-                <th>Trạng thái hoat động</th>
-                <th></th>
-                <th></th>
-              </tr>
-              {services.map((service)=>{
-                return(
-                  <div>
-                      <tr>
-                        <td id='data'>KIO_0{service._id}</td>
-                        <td id='data'>{service.name}</td>
-                        <td id='data'>{service.desc}</td>
-                        <td id='data'>Hoạt động</td>
-                        <td id='data'><a href="#">Chi tiết</a></td>
-                        <td id='data'><a href="#">Cập nhật</a></td>
-                      </tr>
-
-                  </div>
-                )
-                
-              })}
+        <table className="table table-striped table-hover table-warning tableservice ">
+        <thead>
+          <tr>
+            <th scope="col">Mã dịch vụ</th>
+            <th scope="col">Tên dịch vụ</th>
+            <th scope="col">Mô tả dịch vụ</th>
+            <th scope="col">Trạng thái hoạt động</th>
+            <th scope="col">  </th>
+            <th scope="col">  </th>
+          </tr>
+        </thead>
+        <tbody>
+          {services.map((serivce)=>{
+              return (
+                <>
               
-            </table>
+                <tr>
+              <th scope="row">{serivce._id}</th>
+              <td>{serivce.name}</td>
+              <td>{serivce.desc}</td>
+              <td>Hoạt động</td>
+              <td><Link to={`/service/${serivce.id}/update`} className='serviceupdatedetaillabel'>Cập nhật</Link></td>
+              <td><Link to={`/service/${serivce.id}`} className='serviceupdatedetaillabel'>Chi tiêt</Link></td>
+            </tr>   
+            </>
+              )
+          
+
+})}
+            
+        </tbody>
+      </table>
         </div>
-        <div className="add-device">
+
+        </div>
+      </div>
+        
+        
+        <Link to='/service/add' className="add-device">
           <p id='addbtn'>+</p>
-          <p id='labeladd'>Thêm dịch vụ</p>
-        </div>
+          <p id='labeladddevice'>Thêm dịch vụ</p>
+        </Link>
 
 
     </div>

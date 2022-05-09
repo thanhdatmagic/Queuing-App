@@ -12,9 +12,6 @@ export default function Login() {
   const [email,setUser]=useState('')
   const [password,setPassword]=useState('')
   const location=useNavigate()
-  console.log(email);
-  console.log(password);
-
   const Login =async()=>{
     try{ 
       const user= await signInWithEmailAndPassword(
@@ -28,25 +25,22 @@ export default function Login() {
       alert('Wrong User')
     }
 }
-
   return (
       <>
       <div id='loginpage'>
         <img src={logo} id='logo'/>
         <p id='username'  >Tên đăng nhập *</p>
-        <input id="userinput" type="text" value={email} onChange={(e) => setUser(e.target.value)}/>
+        <input id="userinput" type="text"  onChange={(e) => setUser(e.target.value)}/>
         <p id='password'>Mật khẩu *</p>
-        <input id='ipassword' type="password"value={password} onChange={(e) => setPassword(e.target.value)}/>
+        <input id='ipassword' type="password"  onChange={(e) => setPassword(e.target.value)}/>
         <Link to='/forgot'id='fpass'>Quên mật khẩu</Link>
-        <p id='tlogin' id="btnlogin" onClick={Login}>Đăng nhập</p>
+        
+       
     </div>
+    <button type="button" className="btn btn-warning tlogin" onClick={Login}>Đăng nhập</button>
     <div id="infopage">
     <img src={titlepage} id='titlepage'/>
     </div>
       </>
-    
-
-    
-    
   )
 }

@@ -8,9 +8,13 @@ import {collection,getDocs} from "firebase/firestore"
 import DetailDevice from './device-detail'
 
 
-export default function device() {
+
+export default function Device() {
   const [devices,setDevices] = useState([] as any)
   const devicesCollection =collection(db,"device")
+  const status=true
+  const [search,setSearch]=useState('')
+  console.log(devices)
   useEffect(() =>{
     const getDevices=async()=>{
       const data= await getDocs(devicesCollection)
@@ -33,8 +37,8 @@ export default function device() {
           <p id='statusactivity'>Trạng thái hoạt động</p>
           <select id='activityoption' >
             <option value="#">Tất Cả</option>
-            <option value="#">Hoạt Động</option>
-            <option value="#">Ngưng Hoạt Động</option>
+            <option  >Hoạt Động</option>
+            <option >Ngưng Hoạt Động</option>
          
           </select>
         </div>
@@ -49,50 +53,50 @@ export default function device() {
         </div>
         <div className="search">
           <p id='keyword'>Từ khóa</p>
-          <input placeholder="Nhập từ khóa" id='inputkeyword'/>
+          <input placeholder="Nhập từ khóa" id='inputkeyword' onChange={(e)=>setSearch(e.target.value)}/>
         </div>
         <div className="device-data">
-
-            <table>
-              <tr>
-                <th>Mã Thiết Bị</th>
-                <th>Tên Thiết Bị</th>
-                <th>Địa chỉ IP</th>
-                <th>Trạng thái hoat động</th>
-                <th>Trạng thái kết nối</th>
-                <th>Dịch vụ sử dụng</th>
-                <th></th>
-                <th></th>
-              </tr>
-              {devices.map((device)=>{
-                return(
-                  <div>
-                  <tr>
-                  <td>KIO_0{device.id}</td>
-                  <td>{device.name}</td>
-                  <td>{device.ip}</td>
-                  <td>{device.status}</td>
-                  <td>{device.sttconnection}</td>
-                  <td>Kham tim mạch khám mắt <br/><a href="#">Xem thêm</a></td>
-                  <td>
-                    <Link to={`/device/${device.id}`} key={device.id}>Chi tiết</Link>
-                  
-                  </td>
-                  <td>
-                    <Link to={`/device/${device.id}`} key={device.id}>Chi tiết</Link>               
-                  </td>
-                </tr>
-
-                  </div>
-                )
-                
-              })}
+        <table className="table table-striped table-hover table-warning tablenumber">
+        <thead>
+          <tr>
+            <th scope="col">Mã thiết bị</th>
+            <th scope="col">Tên thiết bị</th>
+            <th scope="col">Địa chỉ IP</th>
+            <th scope="col">Trạng thái hoạt động</th>
+            <th scope="col">Trạng thái kết nối</th>
+            <th scope="col">Dịch vụ sử dụng</th>
+            <th scope="col">  </th>
+          </tr>
+        </thead>
+        <tbody>
+          {devices.filter(device=>device.name.toLowerCase().includes(search)).map((device)=>{
+              return (
+                <>
+                <tr>
+              <th scope="row">{device._id}</th>
+              <td>{device.name}</td>
+              <td>{device.ip}</td>
+              <td>Hoạt động</td>
+              <td>Kết nối</td>
+              <td>{device.service}</td>
+              <td ><Link to={`/device/${device.id}`}className='devicedetaillinkposition' >Chi tiết</Link></td>
+              <td><Link to={`/device/${device.id}/update`} className='devicedetaillinkposition' >Cập nhật</Link></td>
               
-            </table>
+            </tr>   
+            </>
+              )
+          
+
+})}
+            
+        </tbody>
+      </table>
+
+           
         </div>
         <Link to='/device/add' className="add-device">
           <p id='addbtn'>+</p>
-          <p id='labeladd'>Thêm thiết bị</p>
+          <p id='labeladddevice'>Thêm thiết bị</p>
         </Link>
 
 

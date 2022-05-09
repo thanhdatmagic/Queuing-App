@@ -8,3 +8,120 @@
    color: red;
    margin: 300px;
 }
+
+.add{
+    position: relative;
+    top: 150px;
+    left:-150px;
+    background-color:white
+}
+.btnaddservice{
+    width: 150px;
+   background-color:#FF9138;
+   border-color: none;
+   position: relative;
+   left:300px
+}
+.btncancelservice{
+    width: 150px;
+    color:#FF9138;
+    background-color:#FFF2E7;
+    border-color: none;
+    position: relative;
+    left:350px
+}
+.addservicepage{
+    background-color:#F7F7F7;
+}
+.tableservice{
+    position: relative;
+    top:40px;
+    left:-450px
+}
+.serviceupdatedetaillabel{
+    position: relative;
+    top: 1px;
+    left: 10px; 
+    color:#4277FF;
+}
+.labelpositionservice{
+    position: relative;
+    left: -160px;
+}
+.labelrulenumberservice{
+    position: relative;
+    left: -300px;
+    font-size:20px;
+    color:#FF7506
+}
+.labelmanageservice{
+    position: relative;
+    left: -250px
+}
+.labelrulenumberserviceoption{
+    position: relative;
+    left: -350px;
+    text-align: center;
+}
+.labelinfodetailservice{
+    font-size:20px;
+    color: #FF7506;
+    position: relative;
+    top: 220px;
+    left:-250px;
+
+}
+.labelinfodetailsingleservice{
+    font-size:16px;
+    color: #282739;
+    position: relative;
+    top: 220px;
+    left: -250px;
+    margin-top:25px;
+    font-weight: bold;
+}
+.tableservicenumber{
+    position: relative;
+    top: -140px;
+    left:300px;
+    width:650px;
+}
+.featureservicenumber{
+    position: relative;
+    top: -630px;
+    left: 600px;
+}
+.labelmanageservicedetail{
+    position: relative;
+    left: -550px;
+    top:150px;
+    font-size: 22px;
+    color: #FF7506;
+
+}
+.mainlabelservicemange{
+    position: relative;
+    top: 100px;
+    left:-60px;
+    font-size:22px;
+    color: #FF7506;
+}
+.mainlabelservicemangeinupdate{
+    position: relative;
+    top: 150px;
+    left: -500px;
+    font-size:22px;
+    color: #FF7506;
+}
+
+
+.positionfixbtnservicedetail{
+    position: absolute;
+    top:400px;
+    left: 1400px
+}
+.positionfixbtnservicedetail1{
+    position: absolute;
+    left: 1400px;
+    top:280px;
+}
