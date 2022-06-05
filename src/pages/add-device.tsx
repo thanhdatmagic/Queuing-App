@@ -5,9 +5,22 @@ import { useState,useEffect } from 'react'
 import {db} from '../firebase'
 import {collection,addDoc,getDocs} from "firebase/firestore"
 import {useNavigate} from 'react-router-dom'
+import Select from 'react-select'
+
+
+type MyArrayType = [
+  string
+]
+
 
 export default function NewDevice() {
+
+
+
+ 
+
   const navitage=useNavigate()
+ 
   const [services,setServices] = useState([] as any)
   const ServicesCollection =collection(db,"service")
   useEffect(() =>{
@@ -19,18 +32,42 @@ export default function NewDevice() {
     getServices()
   },[])
   console.log(services)
+  const options = services.map(service =>(
+    { value:service._id,label:service.name}
+  ))
+ 
 
   const [name,setName]=useState('')
   const [id,setID]=useState('')
   const [ip,setIP]=useState('')
   const [type,setType]=useState('')
   const [service,setService]=useState('')
+  
   const devicesCollection =collection(db,"device")
  const createNew= async ()=>{
-  await addDoc(devicesCollection,{_id:id,ip:ip,name:name,type:type,status:true,sttconnection:true,service:service})
+  await addDoc(devicesCollection,{_id:id,ip:ip,name:name,type:type,status:true,sttconnection:true,service:selectedOptions})
   alert("Added")
   navitage('/device')
  }
+ const [selectedOptions,setSelectedOptions] =useState([] as any)
+ 
+const finalService=selectedOptions.map(a=>(
+  a.value
+))
+
+
+ function handleServiceSelect(e){
+  setSelectedOptions(e.target.value)
+ }
+console.log(selectedOptions);
+
+
+  async function handleMultiServices(e: { target: { value: React.SetStateAction<string> } }){
+   setService(e.target.value)
+
+ } console.log(service);
+
+
   return (
     <>
     <div className="newdevice">
@@ -48,6 +85,7 @@ export default function NewDevice() {
            <p id='pass-label'>Mật khẩu</p>
            <input id='pass-input' type='password' placeholder='Nhập mật khẩu'/>
            <p id='type-label'>Loại thiết bị</p>
+
            <select id="type-input"  onChange={(e)=>{setType(e.target.value)}}>
                     <option disabled selected>Loại thiết bị</option>
                     <option value="Kiosk">Kiosk</option>
@@ -56,13 +94,15 @@ export default function NewDevice() {
 
 
             
-           <p id='service-label'>Dịch vụ sử dụng </p>
-           <select id='service-input'  onChange={(e)=>{setService(e.target.value)}}>
-                    <option disabled selected>Loại dich vu</option>
-                    {services.map(s=>(
-                      <option value={s.name}>{s.name}</option>
-                    ))}
-            </select>
+           <p id='service-label'>Dịch vụ sử dụng </p>    
+            <Select options={options} id='service-input' isMulti
+           
+            onChange={(item)=>setSelectedOptions(item)}
+            />
+            
+          
+           
+           
            <p id='id-label'>Mã thiết bị</p>
            <input id='id-input'placeholder='Nhập mã thiết bị' onChange={(e)=>{setID(e.target.value)}}/>
        </div>

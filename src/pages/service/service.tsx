@@ -5,7 +5,7 @@ import { useState,useEffect } from 'react'
 import {db} from '../../firebase'
 import {Link} from 'react-router-dom'
 import {collection,getDocs} from "firebase/firestore"
-
+import Noti from '../../components/smallprofile'
 
 export default function Service() {
   const [services,setServices] = useState([] as any)
@@ -38,7 +38,7 @@ export default function Service() {
           <p id='statusactivity'>Trạng thái hoạt động</p>
           <select id='activityoption' >
             <option value="#">Tất Cả</option>
-            <option value="#">Hoạt Động</option>
+            <option value='Hoạt động'>Hoạt Động</option>
             <option value="#">Ngưng Hoạt Động</option>
          
           </select>
@@ -50,7 +50,7 @@ export default function Service() {
         </div>
         <div className="search">
           <p id='keyword'>Từ khóa</p>
-          <input placeholder="Nhập từ khóa" id='inputkeyword'/>
+          <input placeholder="Nhập từ khóa" id='inputkeyword' onChange={e=>setSearch(e.target.value)}/>
         </div>
         <div id="service-data">
         <table className="table table-striped table-hover table-warning tableservice ">
@@ -65,7 +65,7 @@ export default function Service() {
           </tr>
         </thead>
         <tbody>
-          {services.map((serivce)=>{
+          {services.filter(service=>service.name.toLowerCase().includes(search)).map((serivce)=>{
               return (
                 <>
               
@@ -98,6 +98,7 @@ export default function Service() {
 
 
     </div>
+    <Noti/>
     </>
   )
 }

@@ -3,6 +3,7 @@ import MenuBar from '../../components/menubar'
 import TableData from './table'
 import './report.css'
 import {Link} from 'react-router-dom'
+import Noti from '../../components/smallprofile'
 export default function index() {
   return (
     <div>
@@ -27,6 +28,7 @@ export default function index() {
         </Link>
             </div>
         </div>
+        <Noti/>
     </div>
   )
 }

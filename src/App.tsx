@@ -24,6 +24,8 @@ import UpdateRole from './pages/role/updaterole'
 import DetailService from './pages/service/service-detail'
 import Report from './pages/report/index'
 import History from './pages/hisory/index'
+import PopUpNUmber from './pages/number/Popup'
+
 
 
 function App() {
@@ -36,7 +38,7 @@ function App() {
         <Route path='/' element={<Login/>}/>
         <Route path='/forgot' element={<Forgot/>}/>
         <Route path='/history' element={<History/>}/>
-        
+        <Route path='/number/popup'element={<PopUpNUmber/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/device' element={<Device/>}/>
         <Route path='/device/:id/update' element={<UpdateDevice/>}/>
@@ -56,10 +58,7 @@ function App() {
         <Route path='/role/add' element={<AddRole/>}/>
         <Route path='/role/:id/update' element={<UpdateRole/>}/>
         <Route path ='/service/:id' element={<DetailService/>}/>
-        <Route path='report' element={<Report/>}/>
-
-
-
+        <Route path='/report' element={<Report/>}/>
       </Routes>
       </BrowserRouter>
     </div>

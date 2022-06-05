@@ -5,7 +5,8 @@ import Chartday from '../components/chartday'
 import Chartweek from '../components/chartweek'
 import Chartmonth from '../components/chartmonth'
 import PieDevice from '../components/piechartdevice'
-import Calendar from '../components/calendar';
+import Calen from '../components/calendar';
+import SmallImage from '../components/smallprofile'
 
 
 import { useState } from 'react';
@@ -20,6 +21,7 @@ export default function Dashboard() {
    
       <div className="dashboard">
         <MenuBar/>
+       
         <h4>Dashboard</h4>
         <h4 className='dashboardlabelmain'>Biểu đồ cấp số</h4>
         <div className="static">
@@ -92,14 +94,16 @@ export default function Dashboard() {
                   <h5 className="mt-0 numberstatic">4.221</h5>
                   <p className="labelstatic">Cấp số.</p>
                 </div>
+                <Calen/>
+                
           </div>
-                 
-            
+         
           </div>
          
     
         </div>
     </div>
+    <SmallImage />
 
 
     

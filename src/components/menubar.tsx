@@ -3,6 +3,7 @@ import logo from '../asset/image/logoatla.png'
 import '../css/menubar.css'
 import { Link,useNavigate } from 'react-router-dom'
 import {Dropdown} from 'react-bootstrap'
+import Dots from './threedot'
 
 
 export default function Menubar() {
@@ -21,17 +22,8 @@ export default function Menubar() {
                     <li className='opitem'><Link to='/service'>Dịch vụ</Link></li>
                     <li className='opitem'><Link to='/number'>Cấp số</Link></li>
                     <li className='opitem'><Link to='/report'>Báo cáo</Link></li>
-                    <Dropdown className='colordropdown'>
-                            <Dropdown.Toggle  id="dropdown-basic">
-                              Cài đặt hệ thống
-                            </Dropdown.Toggle>
-
-                            <Dropdown.Menu>
-                              <Dropdown.Item href="#/action-1"> <Link to='/role'>Quản lý vai trò</Link></Dropdown.Item>
-                              <Dropdown.Item href="#/action-2"> <Link to='/user'>Quản lý người dùng</Link></Dropdown.Item>
-                              <Dropdown.Item href="#/action-3"> <Link to='/history'>Nhật ký hoạt động</Link></Dropdown.Item>
-                            </Dropdown.Menu>
-                      </Dropdown>
+                    <li className='opitem123'>Cài đặt hệ thống</li> <Dots/>
+                    
                 </ul>
             </div>
             <button className='btnlogout' onClick={logout}>Đăng xuất</button>

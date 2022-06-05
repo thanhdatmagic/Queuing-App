@@ -44,8 +44,8 @@ export default function Table(search) {
               <th scope="row">{number.number}</th>
               <td>Nguyen Sai Thanh Dat</td>
               <td>{number.service}</td>
-              <td>Hom nay</td>
-              <td>hom nay</td>
+              <td>Hôm nay</td>
+              <td>Hôm nay</td>
               <td>{number.status}</td>
               <td>Kiosk</td>
               <Link to={`/number/${number.id}`} id='linkdetailnumber'> <td>Chi tiet</td></Link>

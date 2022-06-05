@@ -6,10 +6,13 @@ import { useState,useEffect } from 'react'
 import {db} from '../firebase'
 import {collection,getDocs,updateDoc,doc} from "firebase/firestore"
 import {useParams,useNavigate} from 'react-router-dom'
+import Select from 'react-select'
 
 
 export default function UpdateDevice() {
   const navigate=useNavigate()
+  
+ 
 
   //service 
   const [services,setServices] = useState([] as any)
@@ -37,6 +40,10 @@ export default function UpdateDevice() {
   console.log(id)
 
   const detail=devices.filter(device=>device.id===id)
+  const options = services.map(service =>(
+    { value:service._id,label:service.name}
+  ))
+
   
 
 
@@ -45,6 +52,7 @@ export default function UpdateDevice() {
   const [_id,setID]=useState('')
   const [type,setType]=useState('')
   const [ip,setIP]=useState('')
+  const [selectedOptions,setSelectedOptions] =useState([] as any)
   const [service,setService]=useState('')
   
 
@@ -52,7 +60,9 @@ export default function UpdateDevice() {
  
    const UpdateDevice =async(id)=>{
      const deviceDoc=doc(db,'device',id)
-     const newDevice={_id:_id,name:name,type:type,ip:ip,service:service}
+   
+     const newDevice={_id:_id,name:name,type:type,ip:ip,service:selectedOptions}
+     
      await updateDoc(deviceDoc,newDevice)
      alert('ok')
      navigate('/device')
@@ -84,12 +94,10 @@ export default function UpdateDevice() {
                     <option value="Display Counter">Display Counter</option>
             </select>
            <p id='service-label'>Dịch vụ sử dụng </p>
-           <select id="service-input" onChange={(e)=>{setService(e.target.value)}}>
-                    <option disabled selected>{d.service}</option>
-                    {services.map(s=>(
-                       <option>{s.name}</option>                
-                    ))}
-            </select>
+           <Select options={options} id='service-input' isMulti
+            onChange={(item)=>setSelectedOptions(item)}
+            defaultValue={d.service.map(s=>s.value)}
+            />
            <p id='id-label'>Mã thiết bị</p>
            <input id='id-input'placeholder={d._id}  onChange={(e)=>{setID(e.target.value)}}/>
            <Link to='/device' id ='btncancle'>Huy bỏ</Link>
@@ -100,6 +108,7 @@ export default function UpdateDevice() {
       </>
      
     ))}
+    
      
 
         

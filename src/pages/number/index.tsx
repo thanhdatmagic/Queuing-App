@@ -3,6 +3,7 @@ import MenuBar from '../../components/menubar'
 import TableNumber from './table'
 import './number.css'
 import {Link} from 'react-router-dom'
+import Noti from '../../components/smallprofile'
 
 
 export default function Number() {
@@ -34,7 +35,7 @@ export default function Number() {
        
        
         
-
+    <Noti/>
     </div>
   )
 }

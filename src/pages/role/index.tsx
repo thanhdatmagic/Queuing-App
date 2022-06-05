@@ -3,7 +3,7 @@ import MenuBar from '../../components/menubar'
 import TabelRole from './table'
 import './roel.css'
 import {Link} from 'react-router-dom'
-
+import Noti from '../../components/smallprofile'
 export default function Role() {
   const [search,setSearch] =useState('')
   return (
@@ -25,6 +25,7 @@ export default function Role() {
         </Link>
         </div>
       </div>
+      <Noti/>
     </div>
   )
 }

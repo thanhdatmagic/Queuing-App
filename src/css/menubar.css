@@ -42,3 +42,34 @@
     .colordropdown{
         background-color: none 
     }
+
+    .clicker {
+        width:100px;
+        height:100px;
+     
+        outline:none;
+        cursor:pointer;
+        }
+        
+        .hiddendiv{
+        display:none;
+        height:200px;
+        background-color:green;
+        }
+        
+        .clicker:focus + .hiddendiv{
+        display:block;
+        }
+
+.opitem123{
+    width: 122px;
+height: 24px;
+
+/* 16/16 Bold */
+
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+}

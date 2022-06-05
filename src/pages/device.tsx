@@ -6,7 +6,7 @@ import { useState,useEffect } from 'react'
 import {db} from '../firebase'
 import {collection,getDocs} from "firebase/firestore"
 import DetailDevice from './device-detail'
-
+import Noti from '../components/smallprofile'
 
 
 export default function Device() {
@@ -24,6 +24,7 @@ export default function Device() {
     getDevices()
   },[])
   console.log(devices)
+
   return (
     <>
     <div className="device">
@@ -66,6 +67,7 @@ export default function Device() {
             <th scope="col">Trạng thái kết nối</th>
             <th scope="col">Dịch vụ sử dụng</th>
             <th scope="col">  </th>
+            <th scope="col">  </th>
           </tr>
         </thead>
         <tbody>
@@ -78,7 +80,8 @@ export default function Device() {
               <td>{device.ip}</td>
               <td>Hoạt động</td>
               <td>Kết nối</td>
-              <td>{device.service}</td>
+              <td>{device.service.map(s=>(s.label))}
+              </td>
               <td ><Link to={`/device/${device.id}`}className='devicedetaillinkposition' >Chi tiết</Link></td>
               <td><Link to={`/device/${device.id}/update`} className='devicedetaillinkposition' >Cập nhật</Link></td>
               
@@ -101,6 +104,7 @@ export default function Device() {
 
 
     </div>
+    <Noti/>
     </>
   )
 }

@@ -45,7 +45,7 @@ export default function DetailDevice() {
                       <label>{d.ip} </label>
                       <br/>
                       <label className="col-3 lelfinfodevicedetail">Dịch vụ sử dụng:</label>
-                      <label>{d.service} </label>
+                      <label>{d.service.map(s=>(s.label))}</label>
                     </div>
                     <div className="col-6 lelfinfodevice">
                       <label className="col-3 lelfinfodevicedetail">Loại thiết bị : </label>

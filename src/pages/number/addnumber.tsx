@@ -5,11 +5,13 @@ import { useState,useEffect } from 'react'
 import {db} from '../../firebase'
 import {collection,addDoc,getDocs} from "firebase/firestore"
 import { useNavigate } from 'react-router-dom';
+import Popup from './Popup'
 
 
 
 export default function Addnumber() {
     const navitage=useNavigate();
+    const [popUp,setPopup]=useState(false);
     
     const [numbers,setNumber] = useState([] as any)
     useEffect(() =>{
@@ -42,12 +44,22 @@ export default function Addnumber() {
       getServices()
     },[])
     const createNumber= async ()=>{
-        await addDoc(numbersColection,{number:max+1,service:service,status:'hoat dong',src:'Kiosk'})
-        alert(`So thu tu dc cap: ${max+1}, DV:${service} tai quay 1` )
-        navitage('/number')
+        await addDoc(numbersColection,{number:max+1,service:service,status:'Hoạt Động',src:'Kiosk'})
+        navitage('/number/popup',{
+          state:{
+            number:max+1,
+            service:service
+          }
+        })
        }
+      
+     
   return (
+    
+
     <div className="container addnumberpage">
+      
+
         <div className="row">
             <div className="col-3">
             <MenuBar/>
@@ -62,13 +74,15 @@ export default function Addnumber() {
                       <option value={s.name}>{s.name}</option>
                     ))}
             </select>
+                      
             <button type="button" className="btn btn-warning addNumber" onClick={createNumber}>In số</button>
             <button type="button" className="btn btn-warning cancelNumber" onClick={Back}>Hủy bỏ</button>
             
             </div>
+           
 
         </div>
-
+       
     </div>
   )
 }

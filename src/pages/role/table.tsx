@@ -5,7 +5,7 @@ import {collection,getDocs} from "firebase/firestore"
 import {Link} from 'react-router-dom'
 
 
-export default function TableRole(searchvalue) {
+export default function TableRole(searchvalue: { props: any }) {
   const value=searchvalue.props
 
   const [roles,setRoles]=useState([] as any)
@@ -33,7 +33,7 @@ export default function TableRole(searchvalue) {
     }
     getUser()
   },[])
-  const test=users.map(d=>(d.role))
+  const test=users.map((d: { role: any })=>(d.role))
 
   return (
     <div>
@@ -47,14 +47,14 @@ export default function TableRole(searchvalue) {
           </tr>
         </thead>
         <tbody>
-          {roles.filter(role=>role.name.toLowerCase().includes(value)).map((role)=>{
+          {roles.filter((role: { name: string })=>role.name.toLowerCase().includes(value)).map((role: { name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; desc: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; id: any })=>{
               return (
                 <>
               
                 <tr>
               <th scope="row">{role.name}</th>
               <td>{
-             test.filter(t=>t==role.name).length
+             test.filter((t: any)=>t==role.name).length
                 }</td>
               <td>{role.desc}</td>
               <td><Link to={`/role/${role.id}/update`} className='positionlinktiupdate'>Cập nhật</Link></td>

@@ -3,18 +3,20 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import {Link} from 'react-router-dom'
-
+import { Link,useNavigate } from 'react-router-dom'
+import { useState } from 'react';
 const options = [
   'Quản lý vai trò',
   'Quản lý tài khoản',
   'Nhật ký người dùng',
-
+ 
 ];
 
 const ITEM_HEIGHT = 48;
 
 export default function LongMenu() {
+  const [page,setPage]=useState('')
+  const navigate=useNavigate()
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -22,8 +24,14 @@ export default function LongMenu() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+   
   };
+ function Route(){
 
+   handleClose()
+ }
+ 
+console.log(anchorEl);
   return (
     <div>
       <IconButton
@@ -43,20 +51,19 @@ export default function LongMenu() {
         }}
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
+        onClose={Route}
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
             width: '20ch',
           },
         }}
+      
       >
         {options.map((option) => (
-          <MenuItem key={option} selected={option === 'Quản lý vai trò'} onClick={handleClose}>
-            {option}
+          <MenuItem key={option} selected={option === 'Quản lý vai trò'}  onClick={Route}>
             {option}
           </MenuItem>
-          
         ))}
       </Menu>
     </div>
